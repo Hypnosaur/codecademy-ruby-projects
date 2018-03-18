@@ -166,7 +166,8 @@ end
 # [1, 3, 5, 4, 1, 2, 6, 2, 1, 3, 7]
 # becomes [1, 3, 5, 4, 1, 2]
 def get_elements_until_greater_than_five(array)
-  array.drop_while { |a| a > 5 }
+  array.take_while { |num| num > 5 }
+
 end
 
 # get all the letters used in an array of words and return
@@ -182,11 +183,13 @@ end
 # take a date and format it like dd/mm/yyyy, so Halloween 2013
 # becomes 31/10/2013
 def format_date_nicely(date)
+    date.strftime '%d/%m/%Y'
 end
 
 # get the upper limit of a range. e.g. for the range 1..20, you
 # should return 20
 def get_upper_limit_of(range)
+  range.max
 end
 
 # should return true for a 3 dot range like 1...20, false for a
@@ -196,6 +199,7 @@ end
 
 # get the square root of a number
 def square_root_of(number)
+   Math.sqrt(number)
 end
 
 # --- tougher ones ---
